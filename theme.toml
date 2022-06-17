@@ -1,12 +1,17 @@
-name = "Frances"
+name = "Hodgkins"
 license = "MIT"
-licenselink = "https://github.com/mcrwfrd/hugo-frances-theme/blob/master/LICENSE"
+licenselink = "https://gitlab.com/whateverbits/hugo/hodgkins/-/blob/main/LICENSE"
 description = "A custom grid theme for artists, including a blog and single pages for bio and contact"
-homepage = "https://github.com/mcrwfrd/hugo-frances-theme"
+homepage = "https://gitlab.com/whateverbits/hugo/hodgkins"
 tags = ["grid", "portfolio"]
 features = []
-min_version = "0.41"
+min_version = "0.85.0"
 
 [author]
-  name = "Michael Crawford"
-  homepage = "https://crawford.io"
+  name = "WhateverBits"
+  homepage = "https://whateverbits.com/"
+
+[original]
+	name = "Michael Crawford"
+	homepage = "https://crawford.io/"
+	repo = "https://github.com/mcrwfrd/hugo-frances-theme"
