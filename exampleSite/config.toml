@@ -1,12 +1,19 @@
-# Site settings
-baseurl = "https://example.com"
+baseURL = "https://example.com/"
 languageCode = "en-us"
-sectionPagesMenu = "main"
+title = "Hodgkins"
+description = "Landscape and still-life painter from New Zealand."
 
+copyright = "Example"
+[author]
+  name = "Frances Hodgkins"
+	email = "frances@example.com"
+  homepage = "https://example.com/"
+
+sectionPagesMenu = "main"
+enableGitInfo = true
+
+# Params
 [params]
-	name = "Frances Hodgkins"
-	description = "Landscape and still-life painter from New Zealand"
-	email = "frances@hodgkins.io"
-	author = "Frances Hodgkins"
+	# Hodgkins
 	# Bootstrap CDN | false, "cdnjs", "jsdelivr"
 	hodgBootstrapCDN = false
