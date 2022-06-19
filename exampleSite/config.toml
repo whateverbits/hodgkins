@@ -8,3 +8,5 @@ sectionPagesMenu = "main"
 	description = "Landscape and still-life painter from New Zealand"
 	email = "frances@hodgkins.io"
 	author = "Frances Hodgkins"
+	# Bootstrap CDN | false, "cdnjs", "jsdelivr"
+	hodgBootstrapCDN = false
