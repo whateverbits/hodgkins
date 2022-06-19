@@ -26,5 +26,6 @@
 {{ $scssOptions := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" false) }}
 {{ $scssFonts := resources.Get "scss/_fonts.go.scss" | resources.ExecuteAsTemplate "scss/_fonts.scss" . }}
 {{ $scssStyle := resources.Get "scss/style.scss" }}
-{{ $style := slice $scssFonts $scssStyle | resources.Concat "scss/style.cat.scss" | toCSS $scssOptions | fingerprint "sha384" }}
-{{ with $style }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
+{{ $style := slice $scssFonts $scssStyle | resources.Concat "scss/style.cat.scss" | toCSS $scssOptions }}
+{{ $styleSRI := $style | resources.Fingerprint "sha384" }}
+{{ with $style }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ $styleSRI.Data.Integrity }}">{{ end }}

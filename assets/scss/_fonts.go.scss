@@ -77,3 +77,10 @@
   src: url('{{ with resources.Get "fonts/OpenDyslexic/OpenDyslexic-BoldItalic.woff2" }}{{ .RelPermalink }}{{ end }}') format('woff2'),
        url('{{ with resources.Get "fonts/OpenDyslexic/OpenDyslexic-BoldItalic.woff" }}{{ .RelPermalink }}{{ end }}') format('woff');
 }
+/* Style = Mono */
+@font-face {
+  font-family: 'OpenDyslexicMono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('{{ with resources.Get "fonts/OpenDyslexic/OpenDyslexicMono-Regular.otf" }}{{ .RelPermalink }}{{ end }}') format('opentype');
+}
