@@ -2,6 +2,7 @@ baseURL = "https://example.com/"
 languageCode = "en-us"
 title = "Hodgkins"
 description = "Landscape and still-life painter from New Zealand."
+theme = "hodgkins"
 
 copyright = "Example"
 [author]
@@ -15,5 +16,5 @@ enableGitInfo = true
 # Params
 [params]
 	# Hodgkins
-	# Bootstrap CDN | false, "cdnjs", "jsdelivr"
+	# Bootstrap CDN | false, "cdnjs", "jsdelivr", "unpkg"
 	hodgBootstrapCDN = false
