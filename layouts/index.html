@@ -1,17 +1,32 @@
 {{ define "main" }}
-	<ul id="og-grid" class="og-grid">
+	<ul id="portfolio" class="portfolio text-center">
 		{{ range $.Site.Data.artworks.artworks }}
-			<li>
-				<a 
-					href="" 
-					data-largesrc="{{ .image }}" 
-					data-title="{{ .title }}" 
-					data-mediums="{{ .mediums }}"
-					data-dimensions="{{ .dimensions }}"
-					data-description="{{ .description }}">
-					<img class="d-none d-sm-block" src="{{ .thumb }}" alt="{{ .alt }}">
-					<img class="d-block d-sm-none" src="{{ .image }}" alt="{{ .alt }}">
-				</a>
+			<li class="portfolio-item">
+				{{ $itemID := .title | urlize }}
+				{{ $itemImage := resources.Get .image }}
+				{{ $thumbSize := default "250" $.Site.Params.hodgThumbnailSize }}
+				{{ $itemThumb := $itemImage.Resize (printf "%sx%s" $thumbSize $thumbSize) }}
+
+				{{/* Portfolio Thumbnail */}}
+				<button class="btn collapsed" data-bs-toggle="collapse" data-bs-target="#{{ $itemID }}" aria-expanded="false">
+					<img src="{{ $itemThumb.RelPermalink }}" alt="{{ .alt }}" />
+				</button>
+
+				{{/* Portfolio Content */}}
+				<div id="{{ $itemID }}" class="portfolio-content collapse fade" data-bs-parent="#portfolio">
+					<div class="og-close" data-bs-toggle="collapse" data-bs-target="#{{ $itemID }}"></div>
+					<div class="row bg-info">
+						<div class="col-lg-5 offset-lg-1 col-md-12">
+							<img data-img-src="{{ $itemImage.RelPermalink }}" alt="{{ .alt }}" />
+						</div>
+						<div class="col-lg-6 col-md-12 text-start">
+							<h3>{{ .title }}</h3>
+							<p>{{ .mediums }}</p>
+							<p>{{ .dimensions }}</p>
+							<p>{{ .description }}</p>
+						</div>
+					</div>
+				</div>
 			</li>
 		{{ end }}
 	</ul>

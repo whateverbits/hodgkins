@@ -1,0 +1,35 @@
+$theme: (
+  bs-primary: #bb4809,
+  bs-primary-rgb: #{187,72,9},
+  bs-dark: #1d101a,
+  bs-dark-rgb: #{29,16,26},
+  bs-light: #f4f5f6,
+  bs-light-rgb: #{244,245,246},
+  hg-thumb-size: {{ default "250" .Site.Params.hodgThumbnailSize }}px,
+  hg-expand-size: {{ default "500" .Site.Params.hodgExpandedSize }}px,
+);
+
+$theme-light: (
+  bs-info: #e8e9eD,
+  bs-info-rgb: #{232,233,237},
+  bs-body-bg: #{var(--bs-light)},
+  bs-body-color: #{var(--bs-dark)},
+);
+
+$theme-dark: (
+  bs-info: #2f293d,
+  bs-info-rgb: #{47,41,61},
+  bs-body-bg: #{var(--bs-dark)},
+  bs-body-color: #{var(--bs-light)},
+);
+
+$fonts-dyslexic: (
+  bs-font-sans-serif: #{"OpenDyslexic", sans-serif},
+  bs-font-monospace: #{"OpenDyslexicMono", monospace},
+);
+
+@mixin loadvars($vars) {
+  @each $key, $value in $vars {
+    --#{$key}: #{$value};
+  }
+}

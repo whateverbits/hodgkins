@@ -18,3 +18,7 @@ enableGitInfo = true
 	# Hodgkins
 	# Bootstrap CDN | false, "cdnjs", "jsdelivr", "unpkg"
 	hodgBootstrapCDN = false
+  # Thumbnail Image Size (pixels) | "250"
+  hodgThumbnailSize = "250"
+  # Expanded Image Size (pixels) | "500"
+  hodgExpandedSize = "500"

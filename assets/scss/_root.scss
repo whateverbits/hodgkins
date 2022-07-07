@@ -1,0 +1,18 @@
+:root {
+  @include loadvars($theme);
+  @include loadvars($theme-light);
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+    @include loadvars($theme-dark);
+  }
+}
+:root[theme="1"] {
+  @include loadvars($theme-dark);
+}
+:root[theme="2"] {
+  @include loadvars($theme-light);
+}
+:root[dyslexic="1"] {
+  @include loadvars($fonts-dyslexic);
+}

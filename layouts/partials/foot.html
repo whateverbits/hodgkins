@@ -1,16 +1,22 @@
 {{/* Bootstrap */}}
 {{ $bootstrapCDN := default false (.Site.Params.hodgBootstrapCDN) }}
-{{ $bootstrapCDN1 := dict "cdnjs" "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" }}
-{{ $bootstrapCDN2 := dict "jsdelivr" "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }}
-{{ $bootstrapCDN3 := dict "unpkg" "https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }}
+{{ $bootstrapCDN1 := dict "cdnjs" "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" }}
+{{ $bootstrapCDN2 := dict "jsdelivr" "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" }}
+{{ $bootstrapCDN3 := dict "unpkg" "https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.min.js" }}
 {{ $bootstrapCDNS := merge $bootstrapCDN1 $bootstrapCDN2 $bootstrapCDN3 }}
-
 {{ if and ($bootstrapCDN) (index $bootstrapCDNS $bootstrapCDN) }}
   {{ $bootstrap := (index $bootstrapCDNS $bootstrapCDN) }}
   {{ $bootstrapSRI := resources.GetRemote $bootstrap | resources.Fingerprint "sha384" }}
   <script src="{{ $bootstrap }}" integrity="{{ $bootstrapSRI.Data.Integrity }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{ else }}
-  {{ $bootstrap := "plugins/bootstrap/bootstrap.min.js" }}
-  {{ $bootstrapSRI := resources.Get $bootstrap | resources.Fingerprint "sha384" }}
-  <script src="{{ $bootstrap }}" integrity="{{ $bootstrapSRI.Data.Integrity }}"></script>
+  {{ $bootstrap := resources.Get "plugins/bootstrap/js/bootstrap.min.js" }}
+  {{ $bootstrapSRI := $bootstrap | resources.Fingerprint "sha384" }}
+  <script src="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrapSRI.Data.Integrity }}"></script>
 {{ end }}
+
+{{/* Main */}}
+{{ $jsHodgkins := resources.Get "js/hodgkins.js" }}
+{{ $jsCustom := resources.Get "js/custom.js" }}
+{{ $mainjs := slice $jsHodgkins $jsCustom | resources.Concat "js/main.js" | minify }}
+{{ $mainjsSRI := $mainjs | resources.Fingerprint "sha384" }}
+<script src="{{ $mainjs.RelPermalink }}" integrity="{{ $mainjsSRI.Data.Integrity }}"></script>
