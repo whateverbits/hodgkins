@@ -1,0 +1,17 @@
+[module]
+# Version
+[module.hugoVersion]
+extended = true
+min = "0.84.4"
+# Bootstrap
+[[module.imports]]
+path = "github.com/twbs/bootstrap"
+[[module.imports.mounts]]
+source = "dist/"
+target = "assets/plugins/bootstrap/"
+# Bootstrap Icons
+[[module.imports]]
+path = "github.com/twbs/icons"
+[[module.imports.mounts]]
+source = "icons/"
+target = "assets/plugins/bootstrap-icons/"
