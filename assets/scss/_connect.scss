@@ -1,0 +1,12 @@
+.connect {
+  margin: 0;
+  list-style: none;
+  font-size: 1.5em;
+}
+.connect li {
+  width: 1.5em;
+  display: inline-block;
+}
+.connect li:not(:last-child) {
+	margin-right: 0.875rem;
+}

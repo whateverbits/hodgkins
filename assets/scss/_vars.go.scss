@@ -5,6 +5,8 @@ $theme: (
   bs-dark-rgb: #{29,16,26},
   bs-light: #f4f5f6,
   bs-light-rgb: #{244,245,246},
+  hg-link-color: #{var(--bs-body)},
+  hg-link-hov-color: #{var(--bs-primary)},
   hg-thumb-size: {{ default "250" .Site.Params.hodgThumbnailSize }}px,
   hg-expand-size: {{ default "500" .Site.Params.hodgExpandedSize }}px,
 );
@@ -13,14 +15,18 @@ $theme-light: (
   bs-info: #e8e9eD,
   bs-info-rgb: #{232,233,237},
   bs-body-bg: #{var(--bs-light)},
+  bs-body-bg-rgb: #{var(--bs-light-rgb)},
   bs-body-color: #{var(--bs-dark)},
+  bs-body-color-rgb: #{var(--bs-dark-rgb)},
 );
 
 $theme-dark: (
   bs-info: #2f293d,
   bs-info-rgb: #{47,41,61},
   bs-body-bg: #{var(--bs-dark)},
+  bs-body-bg-rgb: #{var(--bs-dark-rgb)},
   bs-body-color: #{var(--bs-light)},
+  bs-body-color-rgb: #{var(--bs-light-rgb)},
 );
 
 $fonts-dyslexic: (
