@@ -1,2 +1,4 @@
+# Hugo
 .hugo_build.lock
-/resources/
+_vendor/
+resources/
