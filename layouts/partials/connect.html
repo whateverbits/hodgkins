@@ -1,0 +1,20 @@
+{{ with .Site.Params.hodgConnect }}
+  <ul class="connect">
+  {{ range $site, $link := (index . 0) }}
+    <li>
+      {{ $icon := lower $site }}
+      {{ if or (eq $icon "email") (eq $icon "phone") }}
+        {{ $hrefs := dict "email" "mailto" "phone" "tel" }}
+        {{ $icons := dict "email" "envelope-fill" "phone" "telephone-fill" }}
+        <a href="{{ printf "%s:%s" (index $hrefs $icon) $link }}" title="{{ $site }}">
+          {{ partial "icon" (index $icons $icon) }}
+        </a>
+      {{ else }}
+        <a href="{{ $link }}" title="{{ $site }}">
+          {{ partial "icon-brand" $site }}
+        </a>
+      {{ end }}
+    </li>
+  {{ end }}
+  </ul>
+{{ end }}

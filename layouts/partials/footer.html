@@ -1,5 +1,22 @@
-{{ with .Site.Copyright }}
-  <footer>
-    <p class="text-muted ui center aligned header">Copyright &copy; {{ dateFormat "2006" now }} {{ . }}</p>
-  </footer>
-{{ end }}
+<footer class="text-center">
+  {{ partial "connect" . }}
+
+  {{ if and (.Site.Copyright) (ne .Site.Params.hodgCopyright false) }}
+    <br>
+    <p class="text-muted">
+      Copyright &copy; {{ dateFormat "2006" now }}
+      {{ if .Site.Params.hodgCopyrightLink }}
+        <a href="{{ . }}">{{ .Site.Copyright }}</a>
+      {{ else }}
+        {{ .Site.Copyright }}
+      {{ end }}
+    </p>
+  {{ end }}
+
+  {{ with .Site.Params.hodgPrivacy }}
+    <a href="{{ . }}">Privacy</a>
+  {{ end }}
+  {{ with .Sitemap.Filename }}
+    <a href="{{ . }}">Sitemap</a>
+  {{ end }}
+</footer>
