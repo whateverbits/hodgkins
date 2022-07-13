@@ -1,0 +1,11 @@
+{{ $icon := . }}
+{{ $iconPath := "https://unpkg.com/simple-icons@7/icons/" }}
+{{ $iconResource := resources.GetRemote (printf "%s%s.svg" $iconPath (lower $icon)) }}
+
+{{ if $iconResource }}
+  <span class="icon brand" aria-hidden="true">
+    {{ $iconResource.Content | safeHTML }}
+  </span>
+{{ else }}
+  {{ partial "icon" "globe" }}
+{{ end }}
