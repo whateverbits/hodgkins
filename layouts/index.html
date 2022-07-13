@@ -1,6 +1,6 @@
 {{ define "main" }}
 	<ul id="portfolio" class="portfolio text-center">
-		{{ range $.Site.Data.artworks.artworks }}
+		{{ range $.Site.Data.portfolio.portfolio }}
 			<li class="portfolio-item">
 				{{ $itemID := .title | urlize }}
 				{{ $itemImage := resources.Get .image }}
