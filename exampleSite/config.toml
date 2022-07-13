@@ -1,8 +1,8 @@
-baseURL = "https://example.com/"
+baseURL = "https://hodgkins.whateverbits.io/"
 languageCode = "en-us"
-title = "Hodgkins"
-description = "Landscape and still-life painter from New Zealand."
-theme = "hodgkins"
+title = "Hodgkins Demo"
+description = "Hodgkins demo site."
+theme = "gitlab.com/whateverbits/hugo/hodgkins"
 
 copyright = "Example"
 [author]
@@ -13,7 +13,6 @@ copyright = "Example"
 sectionPagesMenu = "main"
 enableGitInfo = true
 
-# Params
 [params]
 	# Hodgkins
 	# Bootstrap CDN | false, "cdnjs", "jsdelivr", "unpkg"
@@ -22,3 +21,23 @@ enableGitInfo = true
   hodgThumbnailSize = "250"
   # Expanded Image Size (pixels) | "500"
   hodgExpandedSize = "500"
+  # Privacy Policy Link | Used as entered.
+  hodgPrivacy = "https://whateverbits.com/privacy/"
+  # Copyright | true, false
+  hodgCopyright = true
+  # Copyright Link | "/"
+  hodgCopyrightLink = "/"
+  # Connect Links
+  # Add any set of links you wish, the name and link will be used as entered.
+  # If the name matches an icon in the Simple Icons project, it will be used. (case-insensitive)
+    # If no matching icon is a found, a globe icon will be used instead.
+    # Non-brand icons also available: Email, Phone
+  # Refer to https://simpleicons.org/ when entering your links of choice.
+  [[params.hodgConnect]]
+    GitHub = "https://github.com/whateverbits/hugo/hodgkins"
+    GitLab = "https://gitlab.com/whateverbits/hugo/hodgkins"
+    Hugo = ""
+		Email = "hello@example.com"
+    Phone = "1234567890"
+		Matrix = ""
+    Twitter = ""
