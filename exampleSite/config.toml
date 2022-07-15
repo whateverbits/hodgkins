@@ -36,8 +36,5 @@ enableGitInfo = true
   [[params.hodgConnect]]
     GitHub = "https://github.com/whateverbits/hugo/hodgkins"
     GitLab = "https://gitlab.com/whateverbits/hugo/hodgkins"
-    Hugo = ""
 		Email = "hello@example.com"
     Phone = "1234567890"
-		Matrix = ""
-    Twitter = ""
