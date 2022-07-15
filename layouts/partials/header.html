@@ -1,18 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Author.name | default "John Doe"}}</a>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenuItems" aria-controls="navbarMenuItems" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      {{ $currentPage := . }}
-      {{ range .Site.Menus.main }}
-        <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}">
-          {{ .Name }}
-        </a>
-      {{ end }}
+    <div class="collapse navbar-collapse justify-content-end" id="navbarMenuItems">
+      <ul class="navbar-nav">
+        {{ $currentPage := . }}
+        {{ .Site.Menus.main }}
+        {{ range .Site.Menus.main }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .URL }}" title="{{ .Title }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarSettings" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span title="Settings">{{ partial "icon" "sliders2" }}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarSettings">
+            <li><a id="conf-theme" class="dropdown-item" href="#" onclick="config.buttonCycle('theme')">
+              <span class="me-2" title="Auto">{{ partial "icon" "circle-half" }}</span>
+              <span class="me-2 d-none" title="Dark">{{ partial "icon" "moon-fill" }}</span>
+              <span class="me-2 d-none" title="Light">{{ partial "icon" "sun-fill" }}</span>
+              Theme
+            </a></li>
+            <li><a id="conf-dyslexic" class="dropdown-item" href="#" onclick="config.buttonCycle('dyslexic')">
+              <span class="icon-holder me-2" title="Off">{{ partial "icon" "toggle2-off" }}</span>
+              <span class="icon-holder me-2 d-none" title="On">{{ partial "icon" "toggle2-on" }}</span>
+              Dyslexic
+            </a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
