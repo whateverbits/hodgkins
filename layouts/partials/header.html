@@ -7,7 +7,7 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarMenuItems">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav fs-5">
         {{ $currentPage := . }}
         {{ .Site.Menus.main }}
         {{ range .Site.Menus.main }}
@@ -19,7 +19,7 @@
         {{ end }}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarSettings" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span title="Settings">{{ partial "icon" "sliders2" }}</span>
+            <span title="Settings">{{ partial "icon" "gear-fill" }}</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarSettings">
             <li><a id="conf-theme" class="dropdown-item" href="#" onclick="config.buttonCycle('theme')">
