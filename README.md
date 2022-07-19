@@ -1,36 +1,40 @@
 # Hodgkins
 Hodgkins is an expanding grid portfolio theme built with Bootstrap for Hugo, named after the New Zealand landscape and still-life painter [Frances Hodgkins](https://franceshodgkins.com/). This project is a fork of [Frances by Michael Crawford](https://github.com/mcrwfrd/hugo-frances-theme).
 
-Grid functionality now utilizes Bootstrap exclusively. The following were removed from the theme: jQuery, Modernizr, ImagesLoaded, Codrops grid script, and PopperJS (bootstrap.bundle).
+Grid functionality now utilizes Bootstrap exclusively. The following were removed from the theme: jQuery, Modernizr, ImagesLoaded, and PopperJS (bootstrap.bundle).
 
 ![Hodgkins screenshot](images/tn.png)
 
 ![Hodgkins screenshot expanded](images/tn-expanded.png)
 
 ## Installation
-Inside your Hugo site, run the following to clone the Hodgkins theme into `themes/hodgkins`:
+
+### Module
+Use the Hodgkins theme as a Hugo module. Refer to the [Hugo Modules documentation](https://gohugo.io/hugo-modules) for more information.
+
+Initialize your site as a Go module.
 
 ```bash
-cd /your/project/root/themes
+hugo mod init gitlab.com/example/your-project
+```
+
+Define `theme` in your project's `config.toml` file.
+
+```toml
+theme = "gitlab.com/whateverbits/hugo/hodgkins"
+```
+
+### Static
+Navigate to your projects `themes` directory; download or clone the theme into `themes/hodgkins`.
+
+```bash
 git clone https://gitlab.com/whateverbits/hugo/hodgkins.git hodgkins
 ```
 
-## Configuration
-Inside `themes/hodgkins`, you'll find a file called `config.toml`. Copy this file to the root of your Hugo site, and customize it as you see fit. Mostly you'll want to change the name and email address here to match your own.
-
-Additionally, in order to use this theme with your Hugo site, you need to add the following line to your own `config.toml` file:
+Define `theme` in your project's `config.toml` file.
 
 ```toml
 theme = "hodgkins"
-```
-
-See Hugo's [quick start guide](https://gohugo.io/getting-started/quick-start/) for more help with adding this and many other themes to your Hugo site.
-
-Finally, test the new theme in your site to make sure it works:
-
-```bash
-cd /your/project/root/
-hugo server
 ```
 
 ## Parameters
