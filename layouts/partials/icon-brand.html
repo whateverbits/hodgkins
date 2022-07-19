@@ -1,6 +1,6 @@
 {{ $icon := . }}
-{{ $iconPath := "https://unpkg.com/simple-icons@7/icons/" }}
-{{ $iconResource := resources.GetRemote (printf "%s%s.svg" $iconPath (lower $icon)) }}
+{{ $iconPath := "plugins/simple-icons/" }}
+{{ $iconResource := resources.Get (printf "%s%s.svg" $iconPath (lower $icon)) }}
 
 {{ if $iconResource }}
   <span class="icon brand" aria-hidden="true">
